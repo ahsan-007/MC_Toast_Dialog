@@ -3,6 +3,7 @@ package com.example.mc_toast_dialog;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,18 @@ public class DialogTest extends AppCompatActivity implements View.OnClickListene
                 AlertDialog.Builder dialog = new AlertDialog.Builder(DialogTest.this) ;
                 dialog.setMessage("This is Message");
                 dialog.setTitle("This is Title");
+                dialog.setPositiveButton("Postive", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                dialog.setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
                 dialog.show();
                 break;
         }
