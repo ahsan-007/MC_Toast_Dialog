@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MC_Toast_Dialog">
         <activity
+            android:name=".DialogTest"
+            android:exported="true" />
+        <activity
             android:name=".ToastTest"
             android:exported="true" />
         <activity
